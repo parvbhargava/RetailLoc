@@ -70,4 +70,4 @@ def write_store_data_to_csv(data, filename):
         print(f"An error occurred while writing to the file: {e}")
 
 data = get_store_data("New Delhi", "Delhi")
-write_store_data_to_csv(data, "store_data.csv")
+write_store_data_to_csv(data, "unicorn_store_data.csv")
