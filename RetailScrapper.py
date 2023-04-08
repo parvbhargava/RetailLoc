@@ -1,7 +1,6 @@
 import csv
 import requests
 import json
-
 def get_store_data(city, state):
     """
     Get store data from the Unicorn Store website for a specified city and state.
@@ -13,8 +12,6 @@ def get_store_data(city, state):
     :return: A dictionary containing store data.
     :rtype: dict
     """
-    
-    
     url = "https://shop.unicornstore.in/cart/store_locator"
     payload = {
         "data": city,
@@ -43,9 +40,8 @@ def get_store_data(city, state):
     # Parse the response text as JSON object
     data = json.loads(response.text)
     return data
-
 def write_store_data_to_csv(data, filename):
-     """
+    """
     Write store data to a CSV file.
     
     :param data: The store data to write to the CSV file.
