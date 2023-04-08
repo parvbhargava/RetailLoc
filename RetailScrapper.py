@@ -3,7 +3,18 @@ import requests
 import json
 
 def get_store_data(city, state):
-    """Get store data from the Unicorn Store website"""
+    """
+    Get store data from the Unicorn Store website for a specified city and state.
+    
+    :param city: The city for which to get store data.
+    :type city: str
+    :param state: The state for which to get store data.
+    :type state: str
+    :return: A dictionary containing store data.
+    :rtype: dict
+    """
+    
+    
     url = "https://shop.unicornstore.in/cart/store_locator"
     payload = {
         "data": city,
@@ -34,7 +45,14 @@ def get_store_data(city, state):
     return data
 
 def write_store_data_to_csv(data, filename):
-    """Write store data to a CSV file"""
+     """
+    Write store data to a CSV file.
+    
+    :param data: The store data to write to the CSV file.
+    :type data: dict
+    :param filename: The name of the CSV file to write to.
+    :type filename: str
+    """
     with open(filename, mode='w', newline='') as file:
         # Create a writer object
         fieldnames = ['Store Name', 'Address', 'Pincode','Timings', 'Phone', 'Latitude', 'Longitude']
